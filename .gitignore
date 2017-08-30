@@ -87,3 +87,6 @@ Desktop.ini
 
 # Android
 .csettings
+
+# なぜかignoreされないファイル
+bin/dda_with_vid_1Debug.app/Contents/MacOS/dda_with_vid_1Debug

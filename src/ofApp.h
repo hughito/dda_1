@@ -27,6 +27,7 @@ class ofApp : public ofBaseApp{
     ofSerial serial;
     Boolean sendValues;
     Smoother smooth;
+    ofTrueTypeFont font;
     
     ofVideoPlayer video;
     bool isStarted = false;

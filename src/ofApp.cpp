@@ -25,6 +25,7 @@ void ofApp::setup(){
     
 //    ofHideCursor();
     
+    font.load("font/Helvetica-Bold.ttf", 50);
 }
 
 //--------------------------------------------------------------
@@ -69,8 +70,7 @@ void ofApp::draw(){
     }
     
     ofSetColor(0);
-    ofDrawBitmapString(vidpos, ofGetWidth()/2, ofGetHeight()/2);
-    
+    font.drawString(ofToString(vidpos, 3), ofGetWidth()/2 - font.stringWidth(ofToString(0.000, 3))/2, ofGetHeight() * 0.65);
 }
 
 //--------------------------------------------------------------
