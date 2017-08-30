@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Smoother.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -25,6 +26,7 @@ class ofApp : public ofBaseApp{
     
     ofSerial serial;
     Boolean sendValues;
+    Smoother smooth;
     
     ofVideoPlayer video;
     bool isStarted = false;
