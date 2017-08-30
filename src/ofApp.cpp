@@ -12,7 +12,7 @@ void ofApp::setup(){
         ofLogError() << "could not open serial port - listing serial devices";
         serial.drain();
         serial.listDevices();
-        OF_EXIT_APP(0);
+//        OF_EXIT_APP(0);
     }
     
     sendValues = true;
@@ -75,13 +75,43 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-    serial.writeByte(0);
-    ofExit();
+    if (serial.isInitialized()) {
+        serial.writeByte(0);
+    }
+//    ofExit();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    switch (key) {
+        case '0':
+            video.loadMovie("0_normal.mp4");
+            break;
+        case '1':
+            video.loadMovie("1_hug.mp4");
+            break;
+        case '2':
+            video.loadMovie("2_cushion.mp4");
+            break;
+        case '3':
+            video.loadMovie("3_beachball.mp4");
+            break;
+        case '4':
+            video.loadMovie("4_drone.mp4");
+            break;
+        case '5':
+            video.loadMovie("5_tree.mp4");
+            break;
+        case '6':
+            video.loadMovie("6_vendingmachine.mp4");
+            break;
+        case '7':
+            video.loadMovie("7_poll.mp4");
+            break;
+        default:
+            break;
+    }
+    video.play();
 }
 
 //--------------------------------------------------------------
