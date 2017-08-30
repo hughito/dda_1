@@ -23,6 +23,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         void send_command(string msg);
         void exit();
+        void videoPosition();
     
     ofSerial serial;
     Boolean sendValues;
@@ -32,6 +33,7 @@ class ofApp : public ofBaseApp{
     ofVideoPlayer video;
     bool isStarted = false;
     float vidpos;
+    int vidnum;
     
     /*
      vidpos == 0.152616 (0_normal-start), 0.910120 (0_normal-end)
