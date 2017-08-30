@@ -27,7 +27,7 @@ class ofApp : public ofBaseApp{
         void videoPosition();
     
     ofSerial serial;
-    Boolean sendValues;
+    bool sendValues;
     Smoother smooth;
     TxtReader reader;
     ofTrueTypeFont font;

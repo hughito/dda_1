@@ -14,11 +14,13 @@ class TxtReader {
 public:
     TxtReader();
     vector<string> readFile(string source, string delimiter = " ");
-    void startData() {startMillis = ofGetElapsedTimeMillis();};
+    void startData();
+    void endData();
     string readCurrentData();
     void printValues();
 private:
     int startMillis = 0;
     int valPerFrame = 28;
     vector<string> values;
+    bool started = false;
 };

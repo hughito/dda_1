@@ -13,6 +13,7 @@ TxtReader::TxtReader() {
 }
 
 vector<string> TxtReader::readFile(string source, string delimiter) {
+    started = false;
     values.clear();
     
     vector < string > linesOfTheFile;
@@ -27,8 +28,21 @@ vector<string> TxtReader::readFile(string source, string delimiter) {
     return values;
 }
 
+void TxtReader::startData() {
+    if (started) return;
+    startMillis = ofGetElapsedTimeMillis();
+    started = true;
+}
+
+void TxtReader::endData() {
+    startMillis = -100000;
+}
+
 string TxtReader::readCurrentData() {
+    if (!started) return "0";
+    if (values.size() == 0) return "0";
     int rownum = floor(float(ofGetElapsedTimeMillis() - startMillis) / float(valPerFrame));
+    cout << "rownum: " << rownum << endl;
     if (rownum > values.size()-1) return "0";
     return values.at(rownum);
 }
