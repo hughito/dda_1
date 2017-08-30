@@ -23,6 +23,10 @@ void ofApp::setup(){
 //    video.loadMovie("0_normal.mp4");
 //    video.setLoopState(OF_LOOP_NORMAL);
     
+    reader.readFile("txt/ball-2.txt");
+    reader.startData();
+    reader.printValues();
+    
 //    ofHideCursor();
     
 
@@ -80,7 +84,7 @@ void ofApp::draw(){
     }
     
     ofSetColor(0);
-    font.drawString(ofToString(vidpos, 3), ofGetWidth()/2 - font.stringWidth(ofToString(0.000, 3))/2, ofGetHeight() * 0.65);
+    font.drawString(ofToString(reader.readCurrentData(), 3), ofGetWidth()/2 - font.stringWidth(ofToString(0.000, 3))/2, ofGetHeight() * 0.65);
 }
 
 //--------------------------------------------------------------
@@ -186,6 +190,7 @@ void ofApp::keyPressed(int key){
             break;
     }
     video.play();
+    reader.startData();
 }
 
 //--------------------------------------------------------------
