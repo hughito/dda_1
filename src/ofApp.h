@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Smoother.hpp"
+#include "TxtReader.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -27,6 +28,7 @@ class ofApp : public ofBaseApp{
     ofSerial serial;
     Boolean sendValues;
     Smoother smooth;
+    TxtReader reader;
     ofTrueTypeFont font;
     
     ofVideoPlayer video;
